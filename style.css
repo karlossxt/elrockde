@@ -100,5 +100,181 @@ footer { background: #000; border-top: 1px solid #333; padding: 40px 0; text-ali
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
+
+    /* --- NUEVA SECCIÓN: OUT NOW WEEKLY --- */
+.weekly-container {
+    background: #080808;
+    padding: 60px 0;
+    border-bottom: 1px solid #222;
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    overflow: hidden; /* Para que nada se salga */
+}
+
+/* La barra roja vertical */
+.vertical-label {
+    background: var(--primary-red);
+    color: white;
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    padding: 20px 10px;
+    writing-mode: vertical-rl; /* Texto vertical */
+    text-orientation: mixed;
+    transform: rotate(180deg); /* Para que se lea de abajo arriba */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    min-height: 400px;
+}
+
+/* Grid de 3 columnas (Música, Cine, Juegos) */
+.weekly-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding-right: 5%; /* Margen derecho */
+}
+
+/* Encabezados de columna (HEAVY ROTATION / ROCK) */
+.col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-family: var(--font-head);
+    text-transform: uppercase;
+}
+.col-title { color: white; font-size: 1.2rem; letter-spacing: 1px; }
+.col-cat { color: var(--primary-red); font-size: 0.8rem; font-weight: bold; }
+
+/* Items de la lista */
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    group;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.list-item:hover { transform: translateX(5px); }
+
+.item-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    filter: grayscale(100%); /* Efecto blanco y negro inicial */
+    transition: 0.3s;
+}
+.list-item:hover .item-thumb { filter: grayscale(0%); } /* Color al pasar mouse */
+
+.item-info { flex-grow: 1; }
+.item-title { display: block; color: white; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; line-height: 1.2; }
+.item-sub { display: block; color: #666; font-size: 0.75rem; text-transform: uppercase; margin-top: 3px; font-weight: bold;}
+
+.item-icon {
+    color: #333;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+.list-item:hover .item-icon { color: white; }
+.spotify-active { color: var(--spotify-green) !important; } /* Siempre verde */
+
+/* --- NUEVO FOOTER INDUSTRIAL --- */
+footer {
+    position: relative;
+    background: #050505;
+    padding: 80px 0 20px;
+    overflow: hidden; /* Clave para la marca de agua */
+    border-top: 1px solid #222;
+}
+
+/* Marca de agua gigante de fondo */
+.footer-watermark {
+    position: absolute;
+    right: -20px;
+    bottom: -50px;
+    font-family: var(--font-head);
+    font-size: 15rem;
+    color: rgba(255, 255, 255, 0.03); /* Casi invisible */
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none; /* No clickeable */
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Logo grande, links, links */
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-brand h2 {
+    background: var(--primary-red);
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.footer-desc { color: #888; font-size: 0.9rem; line-height: 1.6; max-width: 300px; margin-bottom: 30px; }
+
+.footer-socials { display: flex; gap: 20px; }
+.social-link { 
+    color: white; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; 
+}
+.social-link:hover { color: var(--primary-red); }
+
+.footer-col-header {
+    color: var(--primary-red);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.footer-links li { margin-bottom: 12px; }
+.footer-links a {
+    color: #666;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic; /* Estilo deportivo/rock */
+    transition: 0.3s;
+}
+.footer-links a:hover { color: white; padding-left: 5px; }
+
+.copyright-bar {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #444;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ajuste Responsive */
+@media (max-width: 768px) {
+    .weekly-container { flex-direction: column; padding: 0; }
+    .vertical-label { writing-mode: horizontal-tb; transform: none; min-height: auto; width: 100%; }
+    .weekly-grid { padding: 30px 20px; grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-watermark { display: none; } /* Ocultar en móvil */
+    .footer-socials { justify-content: center; }
+}
     .hero-title { font-size: 2.2rem; }
+
 }
