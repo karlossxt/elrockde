@@ -1,38 +1,335 @@
-<!-- VIDEO DE LA SEMANA / PANTALLAS -->
-<section style="background: #000; padding: 50px 0; border-top:1px solid #222;">
-    <div class="container">
-        <h2 class="section-title" style="border-color: #fff;">Video de la Semana</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1RST ROCK | Noticias, Cine y Gaming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- 1. ADN DEL SITIO --- */
+        :root {
+            --bg-body: #0a0a0a;
+            --bg-card: #141414;
+            --primary-red: #e60000;
+            --spotify-green: #1DB954;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+            --font-head: 'Impact', 'Arial Narrow', sans-serif;
+            --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --max-width: 1200px; /* ANCHO MÁXIMO DEL CONTENIDO */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-body); color: var(--text-white); font-family: var(--font-body); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- CLASE MAESTRA PARA CENTRAR CONTENIDO --- */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto; /* Centrado automático */
+            padding: 0 20px; /* Márgenes laterales de seguridad */
+        }
+
+        /* --- 2. HEADER & MENÚ --- */
+        nav {
+            background: rgba(0,0,0,0.95);
+            height: 70px;
+            border-bottom: 3px solid var(--primary-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        /* Usamos flexbox DENTRO del container del nav para alinear */
+        nav .container {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-family: var(--font-head); font-size: 2rem; letter-spacing: 1px; color: white; text-transform: uppercase; }
+        .logo span { color: var(--primary-red); }
         
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
-            <!-- Video Principal -->
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:none;" 
-                    src="https://www.youtube.com/embed/v2AC41dglnM" 
-                    title="YouTube video player" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+        .nav-links { display: flex; height: 100%; align-items: center; }
+        .nav-item { position: relative; height: 100%; display: flex; align-items: center; margin-left: 25px; }
+        
+        .nav-link { text-transform: uppercase; font-weight: bold; font-size: 0.9rem; color: #ddd; padding: 10px 0; display: block; }
+        .nav-link:hover { color: var(--primary-red); }
+        .nav-link i { font-size: 0.7rem; margin-left: 5px; vertical-align: middle; }
+
+        /* DROPDOWN MENU */
+        .dropdown {
+            position: absolute; top: 70px; left: 0; background: #1a1a1a; min-width: 180px;
+            display: none; border-top: 3px solid var(--primary-red);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .dropdown a { display: block; padding: 15px 20px; color: #ccc; border-bottom: 1px solid #333; font-size: 0.85rem; text-transform: uppercase; }
+        .dropdown a:hover { background: #222; color: var(--primary-red); padding-left: 25px; }
+        .nav-item:hover .dropdown { display: block; }
+
+        /* --- 3. HERO SECTION (Fondo ancho completo, contenido centrado) --- */
+        .hero {
+            height: 60vh;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop') no-repeat center center/cover;
+            display: flex; align-items: flex-end;
+        }
+        .hero::before {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: linear-gradient(0deg, #0a0a0a 0%, rgba(10,10,10,0.5) 60%, rgba(10,10,10,0.2) 100%);
+        }
+        .hero-content { position: relative; z-index: 2; padding-bottom: 40px; }
+        
+        .cat-tag { background-color: var(--primary-red); color: white; padding: 5px 12px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
+        .hero-title { font-family: var(--font-head); font-size: 3.5rem; line-height: 1; margin-bottom: 15px; text-transform: uppercase; max-width: 800px; }
+        .hero-excerpt { font-size: 1.1rem; color: #ccc; max-width: 600px; }
+
+        /* --- 4. SPOTIFY SECTION (Compacta) --- */
+        .releases-section { padding: 30px 0; background: #111; border-bottom: 1px solid #222; }
+        .section-header { display: flex; align-items: center; margin-bottom: 15px; }
+        .spotify-icon { color: var(--spotify-green); font-size: 1.2rem; margin-right: 10px; } 
+        .section-header h2 { font-family: var(--font-head); text-transform: uppercase; font-size: 1.4rem; letter-spacing: 0.5px; margin:0;}
+
+        /* Grid ajustado para iconos más pequeños (minmax 130px) */
+        .releases-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+            gap: 15px; 
+        }
+        
+        .release-card { cursor: pointer; transition: transform 0.3s; }
+        .release-card:hover { transform: translateY(-3px); }
+        .album-cover { position: relative; width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 3px; }
+        .album-cover img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .play-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+            display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s;
+        }
+        .release-card:hover .play-overlay { opacity: 1; }
+        .play-overlay i { color: var(--spotify-green); font-size: 2rem; filter: drop-shadow(0 0 5px black); }
+
+        .album-info { padding-top: 8px; }
+        .album-info h4 { font-size: 0.8rem; color: white; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .album-info p { font-size: 0.7rem; color: var(--text-gray); margin-top:2px; }
+
+        /* --- 5. NOTICIAS GENERALES --- */
+        .news-section { padding: 50px 0; }
+        .section-title { font-family: var(--font-head); font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; border-left: 4px solid var(--primary-red); padding-left: 15px; }
+        
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        
+        .news-card { background: var(--bg-card); transition: 0.3s; display: flex; flex-direction: column; }
+        .news-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(230,0,0,0.1); }
+        
+        .news-img { height: 200px; overflow: hidden; position: relative; }
+        .news-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .news-card:hover .news-img img { transform: scale(1.1); }
+        
+        .card-tag { 
+            position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); color: white; 
+            padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .news-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .news-title { font-size: 1.2rem; font-weight: bold; line-height: 1.3; margin-bottom: 10px; color: white; }
+        .news-excerpt { font-size: 0.9rem; color: #aaa; margin-bottom: 15px; flex-grow: 1; }
+        .read-more { font-size: 0.8rem; font-weight: bold; color: var(--primary-red); text-transform: uppercase; }
+
+        /* --- FOOTER --- */
+        footer { background: #000; border-top: 1px solid #333; padding: 40px 0; text-align: center; color: #777; font-size: 0.8rem; margin-top: 40px;}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ -->
+    <nav>
+        <div class="container">
+            <div class="logo">F1RST<span>ROCK</span></div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Rock <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#">Metal & Heavy</a>
+                        <a href="#">Punk & Hardcore</a>
+                        <a href="#">Indie & Alternative</a>
+                        <a href="#">Classic Rock</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Escena Nacional</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" style="color:var(--primary-red);">BYTEMOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container hero-content">
+            <span class="cat-tag">Escena Nacional</span>
+            <h1 class="hero-title">Caifanes anuncia fecha histórica en el Zócalo</h1>
+            <p class="hero-excerpt">La banda liderada por Saúl Hernández promete el concierto gratuito más grande de la década.</p>
+        </div>
+    </header>
+
+    <!-- ESTRENOS (SPOTIFY) - AHORA CONTENIDOS EN CAJA Y MÁS PEQUEÑOS -->
+    <section class="releases-section">
+        <div class="container"> <!-- Contenedor añadido -->
+            
+            <div class="section-header">
+                <i class="fab fa-spotify spotify-icon"></i>
+                <h2>Estrenos de la Semana</h2>
             </div>
             
-            <!-- Lista lateral (Playlist) -->
-            <div style="display: flex; flex-direction: column; justify-content: center;">
-                <h3 style="font-family: var(--font-head); text-transform: uppercase; margin-bottom: 15px;">AC/DC - Thunderstruck</h3>
-                <p style="color: #999; margin-bottom: 20px;">
-                    Recordamos este clásico tras el anuncio de la nueva gira mundial. El video original ha superado las mil millones de vistas.
-                </p>
-                
-                <h4 style="color: var(--primary-red); text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px;">Más Videos:</h4>
-                <ul style="border-top: 1px solid #333;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #333; display: flex; align-items: center;">
-                        <i class="fas fa-play" style="font-size: 0.7rem; margin-right: 10px; color: #555;"></i> Metallica - Lux Æterna
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #333; display: flex; align-items: center;">
-                        <i class="fas fa-play" style="font-size: 0.7rem; margin-right: 10px; color: #555;"></i> Muse - Won't Stand Down
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #333; display: flex; align-items: center;">
-                        <i class="fas fa-play" style="font-size: 0.7rem; margin-right: 10px; color: #555;"></i> Ghost - Mary On A Cross
-                    </li>
-                </ul>
+            <!-- Grid con más columnas (iconos pequeños) -->
+            <div class="releases-grid">
+                <!-- 1 -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/111/fff?text=Sgl" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>Ghosts Again</h4>
+                        <p>Depeche Mode</p>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/222/fff?text=Indie" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>The Car</h4>
+                        <p>Arctic Monkeys</p>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/333/fff?text=Metal" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>Screaming</h4>
+                        <p>Metallica</p>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/444/fff?text=Punk" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>Edging</h4>
+                        <p>Blink-182</p>
+                    </div>
+                </div>
+                <!-- 5 (Extra para ver tamaño) -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/555/fff?text=Rock" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>Hackney</h4>
+                        <p>Rolling Stones</p>
+                    </div>
+                </div>
+                <!-- 6 (Extra) -->
+                <div class="release-card">
+                    <div class="album-cover">
+                        <img src="https://placehold.co/300x300/666/fff?text=Pop" alt="Cover">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="album-info">
+                        <h4>Cracker Island</h4>
+                        <p>Gorillaz</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- NOTICIAS MIXTAS - AHORA CONTENIDAS EN CAJA -->
+    <section class="news-section">
+        <div class="container"> <!-- Contenedor añadido -->
+            
+            <h2 class="section-title">Lo más reciente</h2>
+            
+            <div class="news-grid">
+                
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="card-tag">BYTEMOS</span>
+                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Gaming+News" alt="Gaming">
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Se confirma nuevo juego de 'Guitar Hero' para 2025</h3>
+                        <p class="news-excerpt">Activision estaría trabajando en un reboot de la franquicia con periféricos reales.</p>
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="card-tag">PANTALLAS</span>
+                        <img src="https://placehold.co/600x400/002244/FFF?text=Cine+Rock" alt="Cine">
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Reseña: La biopic de Elvis que incomodó a la familia</h3>
+                        <p class="news-excerpt">Analizamos la nueva serie documental que revela el lado oscuro del Rey.</p>
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="card-tag">METAL</span>
+                        <img src="https://placehold.co/600x400/330000/FFF?text=Metal+News" alt="Metal">
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Slipknot presenta a su nuevo baterista misterioso</h3>
+                        <p class="news-excerpt">Tras meses de rumores, la banda de Iowa reveló la identidad de la nueva máscara.</p>
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="card-tag">NACIONAL</span>
+                        <img src="https://placehold.co/600x400/003300/FFF?text=Vive+Latino" alt="Nacional">
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">El Vive Latino revela horarios y escenarios por día</h3>
+                        <p class="news-excerpt">Prepara tu itinerario: aquí tienes la lista completa para no perderte nada.</p>
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="margin-bottom:15px; font-size:1.5rem;">F1RST<span>ROCK</span></div>
+            <p>&copy; 2026 F1rstRock Media. BYTEMOS, Pantallas y Rock n' Roll.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
