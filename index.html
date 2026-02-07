@@ -3,156 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Rock de Todos los Días</title>
+    <title>El Rock de Todos los Días | Noticias, Radio y Cultura</title>
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fuentes: Anton (Títulos) y Montserrat (Textos) -->
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVEGACIÓN -->
     <nav>
         <div class="container nav-container">
-            <!-- LOGO -->
             <div class="logo">EL ROCK DE <span>TODOS LOS DÍAS</span></div>
             
-            <!-- Hamburguesa Móvil -->
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
 
-            <!-- MENU PRINCIPAL -->
             <ul class="nav-links" id="nav-list">
-                <!-- ROCK -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">Rock <i class="fas fa-chevron-down tiny-icon"></i></a>
                     <div class="dropdown">
-                        <a href="#">Metal & Heavy</a>
-                        <a href="#">Punk & Hardcore</a>
-                        <a href="#">Indie & Alternative</a>
+                        <a href="#">Metal</a>
+                        <a href="#">Punk</a>
+                        <a href="#">Indie</a>
                         <a href="#">Clásicos</a>
                     </div>
                 </li>
-                
-                <!-- ESCENA NACIONAL (DESTACADO) -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link highlight-link">Escena Nacional</a>
-                </li>
-
-                <!-- PANTALLAS (CINE/TV) -->
+                <li class="nav-item"><a href="#" class="nav-link highlight-link">Escena Nacional</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li>
-                
-                <!-- BYTEMOS (VIDEOJUEGOS) -->
                 <li class="nav-item"><a href="#" class="nav-link">Bytemos</a></li>
-                
-                <!-- CULTURA GEEK -->
                 <li class="nav-item"><a href="#" class="nav-link">Cultura</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Comics</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION TIPO MAGAZINE (NETLIFY STYLE) -->
     <section class="container hero-section">
         <div class="hero-grid">
-            
-            <!-- ARTÍCULO PRINCIPAL (GRANDE IZQUIERDA) -->
-            <article class="hero-item main-item" style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=2070&auto=format&fit=crop');">
+            <!-- NOTICIA PRINCIPAL -->
+            <article class="hero-item main-item" style="background-image: url('https://images.unsplash.com/photo-1528645238318-22ccb79d2033?q=80&w=2070&auto=format&fit=crop');">
                 <div class="hero-overlay">
-                    <span class="category-tag">TENDENCIA</span>
-                    <h1 class="hero-title">La resurrección del Vinilo: ¿Moda pasajera o necesidad audiófila?</h1>
-                    <div class="hero-meta">Por Elena Vance • Hace 2 horas</div>
+                    <span class="category-tag">PORTADA</span>
+                    <h1 class="hero-title">Linkin Park: La era de Emily Armstrong y el impacto de 'From Zero'</h1>
+                    <div class="hero-meta">Por Redacción • Hoy</div>
                 </div>
             </article>
 
-            <!-- COLUMNA DERECHA (2 NOTICIAS) -->
             <div class="hero-side-column">
-                
-                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format&fit=crop');">
+                <!-- NOTICIA LATERAL 1 -->
+                <article class="hero-item side-item" style="background-image: url('https://www.thewarningband.com/assets/images/home-hero-mobile.jpg');">
                     <div class="hero-overlay">
-                        <span class="category-tag">LIVE</span>
-                        <h2 class="hero-subtitle">Reseña: Metallica rompe récords de asistencia en CDMX</h2>
+                        <span class="category-tag">NACIONAL</span>
+                        <h2 class="hero-subtitle">The Warning conquista Europa: Sold out en Madrid y Londres</h2>
                     </div>
                 </article>
-
-                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f77ebd961?q=80&w=2070&auto=format&fit=crop');">
+                <!-- NOTICIA LATERAL 2 -->
+                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');">
                     <div class="hero-overlay">
-                        <span class="category-tag">PUNK</span>
-                        <h2 class="hero-subtitle">El futuro del Punk Rock en la era de TikTok</h2>
+                        <span class="category-tag">BYTEMOS</span>
+                        <h2 class="hero-subtitle">GTA VI: Todo lo que sabemos del tráiler 2 y su fecha en PC</h2>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
-    <!-- ESTRENOS DE LA SEMANA (SPOTIFY STYLE) -->
+    <!-- LANZAMIENTOS -->
     <section class="releases-section">
         <div class="container">
             <div class="section-header-flex">
-                <h2 class="section-heading"><i class="fab fa-spotify" style="color:#1DB954;"></i> ESTRENOS DE LA SEMANA</h2>
+                <h2 class="section-heading"><i class="fab fa-spotify" style="color:#1DB954;"></i> ESTRENOS RECIENTES</h2>
                 <a href="#" class="view-all">Ver todo <i class="fas fa-arrow-right"></i></a>
             </div>
             
             <div class="releases-grid">
                 <div class="release-card">
-                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273bf1ec28bd1dfdd9246197397" alt="Album"></div>
-                    <div class="release-info">
-                        <h3>Keep Me Fed</h3>
-                        <p>The Warning</p>
-                    </div>
+                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273bf1ec28bd1dfdd9246197397" alt="Keep Me Fed"></div>
+                    <div class="release-info"><h3>Keep Me Fed</h3><p>The Warning</p></div>
                 </div>
                 <div class="release-card">
-                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Linkin_Park_-_From_Zero.png" alt="Album"></div>
-                    <div class="release-info">
-                        <h3>The Emptiness Machine</h3>
-                        <p>Linkin Park</p>
-                    </div>
+                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Linkin_Park_-_From_Zero.png" alt="From Zero"></div>
+                    <div class="release-info"><h3>From Zero</h3><p>Linkin Park</p></div>
                 </div>
                 <div class="release-card">
-                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Fontaines_D.C._-_Romance.jpg" alt="Album"></div>
-                    <div class="release-info">
-                        <h3>Romance</h3>
-                        <p>Fontaines D.C.</p>
-                    </div>
+                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273b06e9877b06822207b710034" alt="Diamante"></div>
+                    <div class="release-info"><h3>Malhablado</h3><p>Diamante Eléctrico</p></div>
                 </div>
                 <div class="release-card">
-                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273b06e9877b06822207b710034" alt="Album"></div>
-                    <div class="release-info">
-                        <h3>Malhablado</h3>
-                        <p>Diamante Eléctrico</p>
-                    </div>
+                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Green_Day_-_Saviors.png" alt="Saviors"></div>
+                    <div class="release-info"><h3>Saviors</h3><p>Green Day</p></div>
                 </div>
                 <div class="release-card">
-                    <div class="release-cover"><img src="https://placehold.co/300x300/111/fff?text=New+Music" alt="Album"></div>
-                    <div class="release-info">
-                        <h3>Dark Matter</h3>
-                        <p>Pearl Jam</p>
-                    </div>
+                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Fontaines_D.C._-_Romance.jpg" alt="Romance"></div>
+                    <div class="release-info"><h3>Romance</h3><p>Fontaines D.C.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NOTICIAS GENERALES -->
+    <!-- NOTICIAS -->
     <section class="news-section">
         <div class="container">
             <h2 class="section-heading">LO MÁS RECIENTE</h2>
             <div class="news-grid">
-                
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">BYTEMOS</span>
-                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Gaming" alt="Gaming">
+                        <span class="card-tag">FESTIVALES</span>
+                        <img src="https://images.unsplash.com/photo-1459749411177-042180ce6742?q=80&w=2070&auto=format&fit=crop" alt="Festivales">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">Se confirma nuevo 'Guitar Hero' para 2025</h3>
-                        <p class="news-excerpt">Activision estaría trabajando en un reboot de la franquicia con nuevos periféricos.</p>
+                        <h3 class="news-title">Rock al Parque 2024: Primeros rumores del cartel oficial</h3>
+                        <p class="news-excerpt">La escena bogotana espera la confirmación de las bandas internacionales para noviembre.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
@@ -160,87 +123,69 @@
                 <article class="news-card">
                     <div class="news-img">
                         <span class="card-tag">PANTALLAS</span>
-                        <img src="https://placehold.co/600x400/002244/FFF?text=Cine" alt="Cine">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop" alt="Cine">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">La biopic de Elvis que incomodó a la familia</h3>
-                        <p class="news-excerpt">Analizamos la nueva serie documental que revela el lado oscuro del Rey del Rock.</p>
+                        <h3 class="news-title">Nosferatu de Robert Eggers: El terror más esperado</h3>
+                        <p class="news-excerpt">Bill Skarsgård promete una interpretación aterradora del Conde Orlok.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
 
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">NACIONAL</span>
-                        <img src="https://placehold.co/600x400/003300/FFF?text=Festivales" alt="Nacional">
+                        <span class="card-tag">BYTEMOS</span>
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" alt="Retro">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">El Vive Latino revela horarios y escenarios</h3>
-                        <p class="news-excerpt">Prepara tu itinerario: aquí tienes la lista completa para no perderte nada.</p>
+                        <h3 class="news-title">¿Vuelve Guitar Hero? Microsoft da esperanzas</h3>
+                        <p class="news-excerpt">Phil Spencer menciona el interés por revivir clásicos musicales de Activision.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
-    <!-- FOOTER ROBUSTO (NETLIFY STYLE) -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                
-                <!-- Columna 1: Marca -->
-                <div class="footer-widget">
-                    <h3 class="footer-logo">EL ROCK DE<br><span>TODOS LOS DÍAS</span></h3>
-                    <p class="footer-text">Somos un medio independiente dedicado a documentar la cultura del rock, cine, videojuegos y la escena underground nacional.</p>
-                    <div class="footer-socials">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+        <div class="container footer-grid">
+            <div class="footer-widget">
+                <h3 class="footer-logo">EL ROCK DE<br><span>TODOS LOS DÍAS</span></h3>
+                <p class="footer-text">Somos un medio independiente dedicado a documentar la cultura del rock y la escena underground.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
-
-                <!-- Columna 2: Enlaces Rápidos -->
-                <div class="footer-widget">
-                    <h4 class="widget-title">SECCIONES</h4>
-                    <ul class="footer-list">
-                        <li><a href="#">Noticias Rock</a></li>
-                        <li><a href="#">Escena Nacional</a></li>
-                        <li><a href="#">Pantallas (Cine/TV)</a></li>
-                        <li><a href="#">Bytemos (Gaming)</a></li>
-                        <li><a href="#">Cultura Geek</a></li>
-                    </ul>
-                </div>
-
-                <!-- Columna 3: Legal / Contacto -->
-                <div class="footer-widget">
-                    <h4 class="widget-title">CORPORATIVO</h4>
-                    <ul class="footer-list">
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Publicidad</a></li>
-                        <li><a href="#">Aviso de Privacidad</a></li>
-                        <li><a href="#">Contacto / Demos</a></li>
-                    </ul>
-                </div>
-
             </div>
-            
-            <div class="footer-bottom">
-                <p>© 2026 El Rock de Todos los Días. Todos los derechos reservados.</p>
+            <div class="footer-widget">
+                <h4 class="widget-title">SECCIONES</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Noticias Rock</a></li>
+                    <li><a href="#">Escena Nacional</a></li>
+                    <li><a href="#">Bytemos (Gaming)</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h4 class="widget-title">CONTACTO</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Enviar Demo</a></li>
+                    <li><a href="#">Publicidad</a></li>
+                </ul>
             </div>
         </div>
+        <div class="footer-bottom"><p>© 2024 El Rock de Todos los Días.</p></div>
     </footer>
 
-    <!-- REPRODUCTOR FIJO -->
+    <!-- REPRODUCTOR -->
     <div class="radio-player-bar">
         <div class="player-left">
             <div class="player-logo-box"><i class="fas fa-bolt"></i></div>
             <div class="player-station-info">
-                <span class="station-name">RADIO ONLINE</span>
+                <span class="station-name">RADIO EN VIVO</span>
                 <div class="track-scroller">
-                    <span id="track-title" class="track-text">SONANDO AHORA: LO MEJOR DEL ROCK & METAL 24/7...</span>
+                    <span id="track-title" class="track-text">SONANDO: PURE ROCK & METAL 24/7...</span>
                 </div>
             </div>
         </div>
@@ -256,20 +201,15 @@
         </audio>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script>
-        // MENU MOVIL
         const mobileBtn = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
         mobileBtn.addEventListener('click', () => {
             navList.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
-            icon.classList.contains('fa-bars') ? 
-                (icon.classList.remove('fa-bars'), icon.classList.add('fa-times')) : 
-                (icon.classList.remove('fa-times'), icon.classList.add('fa-bars'));
+            mobileBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileBtn.querySelector('i').classList.toggle('fa-times');
         });
 
-        // REPRODUCTOR
         const audio = document.getElementById('audio-stream');
         const playBtn = document.getElementById('play-pause-btn');
         const playIcon = document.getElementById('play-icon');
@@ -279,18 +219,15 @@
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play();
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
+                playIcon.className = 'fas fa-pause';
                 trackTitle.style.animationPlayState = 'running';
             } else {
                 audio.pause();
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
+                playIcon.className = 'fas fa-play';
                 trackTitle.style.animationPlayState = 'paused';
             }
         });
         volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value / 100; });
     </script>
-
 </body>
 </html>
