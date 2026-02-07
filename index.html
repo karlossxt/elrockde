@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Rock de Todos los Días</title>
-    <!-- Iconos FontAwesome -->
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Anton (Títulos) y Montserrat (Texto limpio) -->
+    <!-- Fuentes: Anton (Títulos) y Montserrat (Textos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Tu Hoja de Estilos -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,15 +21,14 @@
             <!-- LOGO -->
             <div class="logo">EL ROCK DE <span>TODOS LOS DÍAS</span></div>
             
-            <!-- Botón Hamburguesa (Móvil) -->
+            <!-- Hamburguesa Móvil -->
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
 
-            <!-- ENLACES DEL MENÚ -->
+            <!-- MENU PRINCIPAL -->
             <ul class="nav-links" id="nav-list">
-                
-                <!-- 1. ROCK (Con Submenú) -->
+                <!-- ROCK -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">Rock <i class="fas fa-chevron-down tiny-icon"></i></a>
                     <div class="dropdown">
@@ -39,74 +38,65 @@
                         <a href="#">Clásicos</a>
                     </div>
                 </li>
-
-                <!-- 2. ESCENA NACIONAL (Destacado) -->
+                
+                <!-- ESCENA NACIONAL (DESTACADO) -->
                 <li class="nav-item">
                     <a href="#" class="nav-link highlight-link">Escena Nacional</a>
                 </li>
 
-                <!-- 3. ENTRETENIMIENTO -->
-                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li> <!-- Cine/TV -->
-                <li class="nav-item"><a href="#" class="nav-link">Bytemos</a></li>   <!-- Videojuegos -->
+                <!-- PANTALLAS (CINE/TV) -->
+                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li>
                 
-                <!-- 4. LIFESTYLE / GEEK -->
+                <!-- BYTEMOS (VIDEOJUEGOS) -->
+                <li class="nav-item"><a href="#" class="nav-link">Bytemos</a></li>
+                
+                <!-- CULTURA GEEK -->
                 <li class="nav-item"><a href="#" class="nav-link">Cultura</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Comics</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION CON SLIDER -->
-    <section class="container">
-        <div class="hero-wrapper">
-            <div class="hero-red-offset"></div>
+    <!-- HERO SECTION TIPO MAGAZINE (NETLIFY STYLE) -->
+    <section class="container hero-section">
+        <div class="hero-grid">
             
-            <div class="hero-slider" id="hero-slider">
-                <!-- Slide 1 -->
-                <div class="hero-slide active">
-                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=2070&auto=format&fit=crop');"></div>
-                    <div class="hero-text-content">
-                        <span class="tag-red-small">TENDENCIA</span>
-                        <h1 class="hero-title-zine">La resurrección del Vinilo: ¿Moda o Necesidad?</h1>
-                        <div class="hero-meta">
-                            <span class="author-box">POR ELENA VANCE</span>
-                            <span class="date-text">HOY</span>
-                        </div>
-                    </div>
+            <!-- ARTÍCULO PRINCIPAL (GRANDE IZQUIERDA) -->
+            <article class="hero-item main-item" style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=2070&auto=format&fit=crop');">
+                <div class="hero-overlay">
+                    <span class="category-tag">TENDENCIA</span>
+                    <h1 class="hero-title">La resurrección del Vinilo: ¿Moda pasajera o necesidad audiófila?</h1>
+                    <div class="hero-meta">Por Elena Vance • Hace 2 horas</div>
                 </div>
-                <!-- Slide 2 -->
-                <div class="hero-slide">
-                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format&fit=crop');"></div>
-                    <div class="hero-text-content">
-                        <span class="tag-red-small">LIVE</span>
-                        <h1 class="hero-title-zine">Reseña: Metallica rompe récords en CDMX</h1>
-                        <div class="hero-meta">
-                            <span class="author-box">POR CARLOS SXT</span>
-                            <span class="date-text">AYER</span>
-                        </div>
+            </article>
+
+            <!-- COLUMNA DERECHA (2 NOTICIAS) -->
+            <div class="hero-side-column">
+                
+                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="hero-overlay">
+                        <span class="category-tag">LIVE</span>
+                        <h2 class="hero-subtitle">Reseña: Metallica rompe récords de asistencia en CDMX</h2>
                     </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="hero-slide">
-                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f77ebd961?q=80&w=2070&auto=format&fit=crop');"></div>
-                    <div class="hero-text-content">
-                        <span class="tag-red-small">ENTREVISTA</span>
-                        <h1 class="hero-title-zine">El futuro del Punk en la era digital</h1>
-                        <div class="hero-meta">
-                            <span class="author-box">POR STAFF</span>
-                            <span class="date-text">HACE 2 DÍAS</span>
-                        </div>
+                </article>
+
+                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f77ebd961?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="hero-overlay">
+                        <span class="category-tag">PUNK</span>
+                        <h2 class="hero-subtitle">El futuro del Punk Rock en la era de TikTok</h2>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN ESTRENOS (5 CARDS) -->
+    <!-- ESTRENOS DE LA SEMANA (SPOTIFY STYLE) -->
     <section class="releases-section">
         <div class="container">
-            <div class="spotify-header">
-                <i class="fab fa-spotify"></i> ESTRENOS DE LA SEMANA
+            <div class="section-header-flex">
+                <h2 class="section-heading"><i class="fab fa-spotify" style="color:#1DB954;"></i> ESTRENOS DE LA SEMANA</h2>
+                <a href="#" class="view-all">Ver todo <i class="fas fa-arrow-right"></i></a>
             </div>
             
             <div class="releases-grid">
@@ -115,7 +105,6 @@
                     <div class="release-info">
                         <h3>Keep Me Fed</h3>
                         <p>The Warning</p>
-                        <span class="release-type">ALBUM</span>
                     </div>
                 </div>
                 <div class="release-card">
@@ -123,7 +112,6 @@
                     <div class="release-info">
                         <h3>The Emptiness Machine</h3>
                         <p>Linkin Park</p>
-                        <span class="release-type">SINGLE</span>
                     </div>
                 </div>
                 <div class="release-card">
@@ -131,7 +119,6 @@
                     <div class="release-info">
                         <h3>Romance</h3>
                         <p>Fontaines D.C.</p>
-                        <span class="release-type">ALBUM</span>
                     </div>
                 </div>
                 <div class="release-card">
@@ -139,7 +126,6 @@
                     <div class="release-info">
                         <h3>Malhablado</h3>
                         <p>Diamante Eléctrico</p>
-                        <span class="release-type">ALBUM</span>
                     </div>
                 </div>
                 <div class="release-card">
@@ -147,97 +133,102 @@
                     <div class="release-info">
                         <h3>Dark Matter</h3>
                         <p>Pearl Jam</p>
-                        <span class="release-type">ALBUM</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE NOTICIAS -->
+    <!-- NOTICIAS GENERALES -->
     <section class="news-section">
         <div class="container">
-            <h2 class="section-title">Lo más reciente</h2>
+            <h2 class="section-heading">LO MÁS RECIENTE</h2>
             <div class="news-grid">
+                
                 <article class="news-card">
                     <div class="news-img">
                         <span class="card-tag">BYTEMOS</span>
-                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Guitar+Hero" alt="Gaming">
+                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Gaming" alt="Gaming">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">Se confirma nuevo juego de 'Guitar Hero' para 2025</h3>
+                        <h3 class="news-title">Se confirma nuevo 'Guitar Hero' para 2025</h3>
+                        <p class="news-excerpt">Activision estaría trabajando en un reboot de la franquicia con nuevos periféricos.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
+
                 <article class="news-card">
                     <div class="news-img">
                         <span class="card-tag">PANTALLAS</span>
-                        <img src="https://placehold.co/600x400/002244/FFF?text=Biopic+Rock" alt="Cine">
+                        <img src="https://placehold.co/600x400/002244/FFF?text=Cine" alt="Cine">
                     </div>
                     <div class="news-content">
                         <h3 class="news-title">La biopic de Elvis que incomodó a la familia</h3>
+                        <p class="news-excerpt">Analizamos la nueva serie documental que revela el lado oscuro del Rey del Rock.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
+
                 <article class="news-card">
                     <div class="news-img">
                         <span class="card-tag">NACIONAL</span>
-                        <img src="https://placehold.co/600x400/003300/FFF?text=Vive+Latino" alt="Nacional">
+                        <img src="https://placehold.co/600x400/003300/FFF?text=Festivales" alt="Nacional">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">El Vive Latino revela horarios por día</h3>
+                        <h3 class="news-title">El Vive Latino revela horarios y escenarios</h3>
+                        <p class="news-excerpt">Prepara tu itinerario: aquí tienes la lista completa para no perderte nada.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
 
-    <!-- VIDEO DE LA SEMANA -->
-    <section class="video-section">
-        <div class="container">
-            <h2 class="section-title" style="border-color: #fff; color: white;">Video Destacado</h2>
-            <div class="video-grid">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/v2AC41l6X0gt" title="AC/DC" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="video-info">
-                    <h3>AC/DC - Thunderstruck</h3>
-                    <p>El clásico atemporal que sigue llenando estadios en todo el mundo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- FOOTER ROBUSTO (NETLIFY STYLE) -->
     <footer>
         <div class="container">
-            <div class="footer-watermark">ROCK</div>
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h2>EL ROCK DE<br><span style="color:var(--primary-red)">TODOS LOS DÍAS</span></h2> 
-                    <p class="footer-desc">Periodismo musical independiente, crudo y directo.</p>
+            <div class="footer-grid">
+                
+                <!-- Columna 1: Marca -->
+                <div class="footer-widget">
+                    <h3 class="footer-logo">EL ROCK DE<br><span>TODOS LOS DÍAS</span></h3>
+                    <p class="footer-text">Somos un medio independiente dedicado a documentar la cultura del rock, cine, videojuegos y la escena underground nacional.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-col-header">Secciones</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Rock & Metal</a></li>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">SECCIONES</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Noticias Rock</a></li>
                         <li><a href="#">Escena Nacional</a></li>
-                        <li><a href="#">Cine y Series</a></li>
-                        <li><a href="#">Gaming</a></li>
+                        <li><a href="#">Pantallas (Cine/TV)</a></li>
+                        <li><a href="#">Bytemos (Gaming)</a></li>
+                        <li><a href="#">Cultura Geek</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-col-header">Contacto</h4>
-                    <ul class="footer-links">
+
+                <!-- Columna 3: Legal / Contacto -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">CORPORATIVO</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Sobre Nosotros</a></li>
                         <li><a href="#">Publicidad</a></li>
-                        <li><a href="#">Enviar Demo</a></li>
                         <li><a href="#">Aviso de Privacidad</a></li>
+                        <li><a href="#">Contacto / Demos</a></li>
                     </ul>
                 </div>
+
             </div>
-            <div class="copyright-bar">
-                <span>© 2026 EL ROCK DE TODOS LOS DÍAS</span>
+            
+            <div class="footer-bottom">
+                <p>© 2026 El Rock de Todos los Días. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -247,9 +238,9 @@
         <div class="player-left">
             <div class="player-logo-box"><i class="fas fa-bolt"></i></div>
             <div class="player-station-info">
-                <span class="station-name">EL ROCK DE TODOS LOS DÍAS</span>
+                <span class="station-name">RADIO ONLINE</span>
                 <div class="track-scroller">
-                    <span id="track-title" class="track-text">RADIO ONLINE - SONANDO LOS MEJORES HITS...</span>
+                    <span id="track-title" class="track-text">SONANDO AHORA: LO MEJOR DEL ROCK & METAL 24/7...</span>
                 </div>
             </div>
         </div>
@@ -265,26 +256,20 @@
         </audio>
     </div>
 
-    <!-- SCRIPTS (MENU MOVIL + PLAYER + SLIDER) -->
+    <!-- JAVASCRIPT -->
     <script>
-        /* --- MENU MOVIL --- */
+        // MENU MOVIL
         const mobileBtn = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
-
         mobileBtn.addEventListener('click', () => {
             navList.classList.toggle('active');
-            // Cambiar icono de hamburguesa a X
             const icon = mobileBtn.querySelector('i');
-            if(navList.classList.contains('active')){
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            icon.classList.contains('fa-bars') ? 
+                (icon.classList.remove('fa-bars'), icon.classList.add('fa-times')) : 
+                (icon.classList.remove('fa-times'), icon.classList.add('fa-bars'));
         });
 
-        /* --- LOGICA DEL REPRODUCTOR --- */
+        // REPRODUCTOR
         const audio = document.getElementById('audio-stream');
         const playBtn = document.getElementById('play-pause-btn');
         const playIcon = document.getElementById('play-icon');
@@ -305,16 +290,6 @@
             }
         });
         volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value / 100; });
-
-        /* --- LOGICA DEL SLIDER --- */
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 5000);
     </script>
 
 </body>
