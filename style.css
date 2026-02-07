@@ -425,3 +425,163 @@ footer {
     .footer-content { grid-template-columns: 1fr; gap: 30px; }
     .copyright-bar { flex-direction: column; gap: 10px; text-align: center; }
 }
+/* --- REPRODUCTOR FIJO (STICKY PLAYER) --- */
+body {
+    padding-bottom: 80px; /* Espacio para que el player no tape el footer */
+}
+
+.radio-player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    border-top: 2px solid var(--primary-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 9999;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
+}
+
+/* Izquierda: Logo y Texto */
+.player-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+}
+
+.player-logo-box {
+    width: 40px; height: 40px;
+    background: var(--primary-red);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.player-station-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.station-name {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.track-scroller {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+}
+
+.track-text {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: #fff;
+    display: inline-block;
+    /* Animación de texto corriendo */
+    animation: scroll-text 10s linear infinite; 
+    animation-play-state: paused; /* Empieza pausado hasta dar play */
+}
+
+@keyframes scroll-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Centro: Botones */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.ctrl-btn:hover { color: #fff; }
+
+.play-btn {
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #000;
+    transition: 0.3s;
+}
+
+.play-btn:hover { background: var(--primary-red); color: #fff; transform: scale(1.1); }
+
+/* Derecha: Volumen y Live */
+.player-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.red-dot {
+    width: 8px; height: 8px;
+    background: red;
+    border-radius: 50%;
+    box-shadow: 0 0 10px red;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.volume-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+}
+
+.volume-slider {
+    width: 80px;
+    cursor: pointer;
+    accent-color: var(--primary-red);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .player-left { width: auto; flex-grow: 1; }
+    .station-name { display: none; } /* Ocultar nombre pequeño */
+    .track-scroller { width: 140px; }
+    
+    .player-right { display: none; } /* Ocultar volumen en móvil */
+    .ctrl-btn { display: none; } /* Ocultar prev/next en móvil */
+}
