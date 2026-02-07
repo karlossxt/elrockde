@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rock de Todos los Días | Escena Nacional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- NUEVAS FUENTES MÁS DELGADAS: Oswald (Títulos) e Inter (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oswald:wght@200;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN (Se mantiene igual) -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">EL ROCK DE <span>TODOS LOS DÍAS</span></div>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Rock</a></li>
+                <li class="nav-item"><a href="#nacional" class="nav-link highlight-link">Escena Nacional</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Bytemos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cultura</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Actualizada con noticias reales) -->
+    <section class="container hero-section">
+        <div class="hero-grid">
+            <article class="hero-item main-item" style="background-image: url('https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=2076&auto=format&fit=crop');">
+                <div class="hero-overlay">
+                    <span class="category-tag">REPORTAJE</span>
+                    <h1 class="hero-title">Austin TV y el arte de la música instrumental en México</h1>
+                    <div class="hero-meta">Por Carlos S. • Feb 2024</div>
+                </div>
+            </article>
+            <div class="hero-side-column">
+                <article class="hero-item side-item" style="background-image: url('https://i.scdn.co/image/ab6761610000e5eb56e99335a49852028fd6327e');">
+                    <div class="hero-overlay">
+                        <span class="category-tag">NUEVO SINGLE</span>
+                        <h2 class="hero-subtitle">Los Mesoneros presentan 'Dime Como Tú Quieras'</h2>
+                    </div>
+                </article>
+                <article class="hero-item side-item" style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="hero-overlay">
+                        <span class="category-tag">GIRA</span>
+                        <h2 class="hero-subtitle">Serbia anuncia fechas para su tour 'Melodramática'</h2>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: ESCENA NACIONAL -->
+    <section id="nacional" class="nacional-section container">
+        <div class="section-header-flex">
+            <h2 class="section-heading">ESCENA NACIONAL</h2>
+            <p class="section-sub">Descubre el sonido que está moviendo el underground hoy.</p>
+        </div>
+
+        <div class="nacional-grid">
+            <!-- Banda 1 -->
+            <div class="band-card">
+                <div class="band-img">
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb6000032e3952a26569ec711d" alt="Margarita Siempre Viva">
+                </div>
+                <div class="band-info">
+                    <h3>Margarita Siempre Viva</h3>
+                    <p class="band-genre">Indie Rock / Post-Punk</p>
+                    <p class="band-desc">Desde Medellín, la banda que redefinió el sonido alternativo paisa con letras melancólicas.</p>
+                    <div class="band-links">
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banda 2 -->
+            <div class="band-card">
+                <div class="band-img">
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb981665a329d6d0354f59048c" alt="Arde la Sangre">
+                </div>
+                <div class="band-info">
+                    <h3>Arde la Sangre</h3>
+                    <p class="band-genre">Metal Alternativo</p>
+                    <p class="band-desc">El nuevo proyecto de Corvata y Tery (ex-Carajo) que está rompiendo todo en Argentina y Latam.</p>
+                    <div class="band-links">
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banda 3 -->
+            <div class="band-card">
+                <div class="band-img">
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb6a2632b509f6e6900f807248" alt="Diamante Eléctrico">
+                </div>
+                <div class="band-info">
+                    <h3>Diamante Eléctrico</h3>
+                    <p class="band-genre">Rock / Funk / Soul</p>
+                    <p class="band-desc">Ganadores del Grammy y referentes absolutos del rock elegante hecho en español.</p>
+                    <div class="band-links">
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y REPRODUCTOR (Se mantienen igual pero con nuevas fuentes) -->
+    <!-- ... (aquí iría el resto del código que ya tienes) ... -->
+
+</body>
+</html>
