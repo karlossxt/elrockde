@@ -1,4 +1,4 @@
-/* --- style.css --- */
+/* --- VARIABLES & BASE --- */
 :root {
     --bg-body: #0a0a0a;
     --bg-card: #141414;
@@ -16,10 +16,10 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
-/* LAYOUT */
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+/* LAYOUT UTILITY */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; position: relative; }
 
-/* NAV */
+/* --- NAVEGACIÓN --- */
 nav {
     background: rgba(0,0,0,0.95); height: 70px; border-bottom: 3px solid var(--primary-red);
     position: sticky; top: 0; z-index: 1000;
@@ -42,42 +42,87 @@ nav .container { height: 100%; display: flex; justify-content: space-between; al
 .dropdown a:hover { background: #222; color: var(--primary-red); padding-left: 25px; }
 .nav-item:hover .dropdown { display: block; }
 
-/* HERO */
-.hero {
-    height: 60vh; position: relative;
-    background: url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop') no-repeat center center/cover;
-    display: flex; align-items: flex-end;
+/* --- HERO STYLE (ZINE / BRUTALIST) --- */
+.hero-wrapper {
+    position: relative;
+    margin: 60px 0;
+    padding-bottom: 20px;
 }
-.hero::before {
-    content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-    background: linear-gradient(0deg, #0a0a0a 0%, rgba(10,10,10,0.5) 60%, rgba(10,10,10,0.2) 100%);
+.hero-red-offset {
+    position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
+    background-color: #8a0000; z-index: 0;
 }
-.hero-content { position: relative; z-index: 2; padding-bottom: 40px; }
-.cat-tag { background-color: var(--primary-red); color: white; padding: 5px 12px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
-.hero-title { font-family: var(--font-head); font-size: 3.5rem; line-height: 1; margin-bottom: 15px; text-transform: uppercase; max-width: 800px; text-shadow: 2px 2px 10px black; }
-.hero-excerpt { font-size: 1.1rem; color: #ccc; max-width: 600px; text-shadow: 1px 1px 5px black; }
+.hero-main {
+    position: relative; z-index: 1; height: 550px; background: #000;
+    display: flex; align-items: flex-end; overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+.hero-bg-img {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-position: center; background-size: cover;
+    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+    transition: transform 0.5s, filter 0.5s;
+}
+.hero-main:hover .hero-bg-img {
+    transform: scale(1.05); filter: grayscale(0%) contrast(1);
+}
+.hero-text-content {
+    position: relative; z-index: 2; padding: 60px; width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+.tag-red-small {
+    background: var(--primary-red); color: white; font-size: 0.7rem; font-weight: bold;
+    text-transform: uppercase; padding: 4px 8px; display: inline-block; margin-bottom: 15px; letter-spacing: 1px;
+}
+.hero-title-zine {
+    font-family: var(--font-head); font-size: 4rem; font-style: italic;
+    line-height: 0.9; text-transform: uppercase; color: white;
+    margin-bottom: 25px; max-width: 900px; text-shadow: 3px 3px 0px #000;
+}
+.hero-meta {
+    display: flex; align-items: center; gap: 15px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;
+}
+.author-box { background: white; color: black; padding: 5px 10px; font-family: var(--font-head); letter-spacing: 1px; }
+.date-text { color: #ccc; font-family: var(--font-body); }
 
-/* SPOTIFY SECTION */
-.releases-section { padding: 30px 0; background: #111; border-bottom: 1px solid #222; }
-.section-header { display: flex; align-items: center; margin-bottom: 15px; }
-.spotify-icon { color: var(--spotify-green); font-size: 1.2rem; margin-right: 10px; } 
-.section-header h2 { font-family: var(--font-head); text-transform: uppercase; font-size: 1.4rem; letter-spacing: 0.5px; margin:0;}
-.releases-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
-.release-card { cursor: pointer; transition: transform 0.3s; }
-.release-card:hover { transform: translateY(-3px); }
-.album-cover { position: relative; width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 3px; }
-.album-cover img { width: 100%; height: 100%; object-fit: cover; }
-.play-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);
-    display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s;
-}
-.release-card:hover .play-overlay { opacity: 1; }
-.play-overlay i { color: var(--spotify-green); font-size: 2rem; filter: drop-shadow(0 0 5px black); }
-.album-info { padding-top: 8px; }
-.album-info h4 { font-size: 0.8rem; color: white; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.album-info p { font-size: 0.7rem; color: var(--text-gray); margin-top:2px; }
 
-/* NEWS SECTION */
+/* --- OUT NOW WEEKLY (VERTICAL SECTION) --- */
+.weekly-container {
+    background: #080808; padding: 60px 0; border-bottom: 1px solid #222;
+    display: flex; gap: 40px; align-items: stretch; overflow: hidden;
+}
+.vertical-label {
+    background: var(--primary-red); color: white; font-family: var(--font-head); font-size: 2.5rem;
+    padding: 20px 10px; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);
+    text-align: center; text-transform: uppercase; letter-spacing: 3px; min-height: 400px;
+}
+.weekly-grid {
+    flex-grow: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; padding-right: 5%;
+}
+.col-header {
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 25px;
+    font-family: var(--font-head); text-transform: uppercase;
+}
+.col-title { color: white; font-size: 1.2rem; letter-spacing: 1px; }
+.col-cat { color: var(--primary-red); font-size: 0.8rem; font-weight: bold; }
+
+.list-item { display: flex; align-items: center; margin-bottom: 20px; cursor: pointer; transition: 0.3s; }
+.list-item:hover { transform: translateX(5px); }
+.item-thumb {
+    width: 60px; height: 60px; object-fit: cover; margin-right: 15px;
+    filter: grayscale(100%); transition: 0.3s;
+}
+.list-item:hover .item-thumb { filter: grayscale(0%); }
+.item-info { flex-grow: 1; }
+.item-title { display: block; color: white; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; line-height: 1.2; }
+.item-sub { display: block; color: #666; font-size: 0.75rem; text-transform: uppercase; margin-top: 3px; font-weight: bold;}
+.item-icon { color: #333; font-size: 1.2rem; transition: 0.3s; }
+.list-item:hover .item-icon { color: white; }
+.spotify-active { color: var(--spotify-green) !important; }
+
+/* --- NEWS SECTION --- */
 .news-section { padding: 50px 0; }
 .section-title { font-family: var(--font-head); font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; border-left: 4px solid var(--primary-red); padding-left: 15px; }
 .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
@@ -95,186 +140,63 @@ nav .container { height: 100%; display: flex; justify-content: space-between; al
 .news-excerpt { font-size: 0.9rem; color: #aaa; margin-bottom: 15px; flex-grow: 1; }
 .read-more { font-size: 0.8rem; font-weight: bold; color: var(--primary-red); text-transform: uppercase; }
 
-/* FOOTER */
-footer { background: #000; border-top: 1px solid #333; padding: 40px 0; text-align: center; color: #777; font-size: 0.8rem; margin-top: 40px;}
+/* --- VIDEO SECTION --- */
+.video-section { background: #000; padding: 50px 0; border-top:1px solid #222; }
+.video-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:none; }
+.video-info h3 { font-family: var(--font-head); text-transform: uppercase; margin-bottom: 15px; }
+.video-info p { color: #999; margin-bottom: 20px; font-size: 0.9rem; }
+.video-info h4 { color: var(--primary-red); text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; }
+.video-info ul { border-top: 1px solid #333; }
+.video-info li { padding: 10px 0; border-bottom: 1px solid #333; display: flex; align-items: center; color: #ccc; font-size: 0.9rem; }
+.video-info i { font-size: 0.7rem; margin-right: 10px; color: #555; }
 
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-
-    /* --- NUEVA SECCIÓN: OUT NOW WEEKLY --- */
-.weekly-container {
-    background: #080808;
-    padding: 60px 0;
-    border-bottom: 1px solid #222;
-    display: flex;
-    gap: 40px;
-    align-items: stretch;
-    overflow: hidden; /* Para que nada se salga */
-}
-
-/* La barra roja vertical */
-.vertical-label {
-    background: var(--primary-red);
-    color: white;
-    font-family: var(--font-head);
-    font-size: 2.5rem;
-    padding: 20px 10px;
-    writing-mode: vertical-rl; /* Texto vertical */
-    text-orientation: mixed;
-    transform: rotate(180deg); /* Para que se lea de abajo arriba */
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    min-height: 400px;
-}
-
-/* Grid de 3 columnas (Música, Cine, Juegos) */
-.weekly-grid {
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    padding-right: 5%; /* Margen derecho */
-}
-
-/* Encabezados de columna (HEAVY ROTATION / ROCK) */
-.col-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    font-family: var(--font-head);
-    text-transform: uppercase;
-}
-.col-title { color: white; font-size: 1.2rem; letter-spacing: 1px; }
-.col-cat { color: var(--primary-red); font-size: 0.8rem; font-weight: bold; }
-
-/* Items de la lista */
-.list-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    group;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.list-item:hover { transform: translateX(5px); }
-
-.item-thumb {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 15px;
-    filter: grayscale(100%); /* Efecto blanco y negro inicial */
-    transition: 0.3s;
-}
-.list-item:hover .item-thumb { filter: grayscale(0%); } /* Color al pasar mouse */
-
-.item-info { flex-grow: 1; }
-.item-title { display: block; color: white; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; line-height: 1.2; }
-.item-sub { display: block; color: #666; font-size: 0.75rem; text-transform: uppercase; margin-top: 3px; font-weight: bold;}
-
-.item-icon {
-    color: #333;
-    font-size: 1.2rem;
-    transition: 0.3s;
-}
-.list-item:hover .item-icon { color: white; }
-.spotify-active { color: var(--spotify-green) !important; } /* Siempre verde */
-
-/* --- NUEVO FOOTER INDUSTRIAL --- */
+/* --- FOOTER INDUSTRIAL --- */
 footer {
-    position: relative;
-    background: #050505;
-    padding: 80px 0 20px;
-    overflow: hidden; /* Clave para la marca de agua */
-    border-top: 1px solid #222;
+    position: relative; background: #050505; padding: 80px 0 20px; overflow: hidden; border-top: 1px solid #222;
 }
-
-/* Marca de agua gigante de fondo */
 .footer-watermark {
-    position: absolute;
-    right: -20px;
-    bottom: -50px;
-    font-family: var(--font-head);
-    font-size: 15rem;
-    color: rgba(255, 255, 255, 0.03); /* Casi invisible */
-    line-height: 1;
-    z-index: 0;
-    pointer-events: none; /* No clickeable */
-    transform: rotate(-90deg);
-    transform-origin: bottom right;
+    position: absolute; right: -20px; bottom: -50px; font-family: var(--font-head); font-size: 15rem;
+    color: rgba(255, 255, 255, 0.03); line-height: 1; z-index: 0; pointer-events: none;
+    transform: rotate(-90deg); transform-origin: bottom right;
 }
-
 .footer-content {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; /* Logo grande, links, links */
-    gap: 50px;
-    margin-bottom: 60px;
+    position: relative; z-index: 1; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; margin-bottom: 60px;
 }
-
 .footer-brand h2 {
-    background: var(--primary-red);
-    color: white;
-    display: inline-block;
-    padding: 5px 10px;
-    font-family: var(--font-head);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    background: var(--primary-red); color: white; display: inline-block; padding: 5px 10px;
+    font-family: var(--font-head); font-size: 1.8rem; text-transform: uppercase; margin-bottom: 20px;
 }
 .footer-desc { color: #888; font-size: 0.9rem; line-height: 1.6; max-width: 300px; margin-bottom: 30px; }
-
 .footer-socials { display: flex; gap: 20px; }
-.social-link { 
-    color: white; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; 
-}
+.social-link { color: white; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 .social-link:hover { color: var(--primary-red); }
-
 .footer-col-header {
-    color: var(--primary-red);
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    color: var(--primary-red); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px;
 }
 .footer-links li { margin-bottom: 12px; }
 .footer-links a {
-    color: #666;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-style: italic; /* Estilo deportivo/rock */
-    transition: 0.3s;
+    color: #666; font-size: 0.85rem; text-transform: uppercase; font-weight: bold; font-style: italic;
 }
 .footer-links a:hover { color: white; padding-left: 5px; }
-
 .copyright-bar {
-    border-top: 1px solid #1a1a1a;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #444;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border-top: 1px solid #1a1a1a; padding-top: 20px; display: flex; justify-content: space-between; align-items: center;
+    color: #444; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
 }
 
-/* Ajuste Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-red-offset { display: none; }
+    .hero-title-zine { font-size: 2.5rem; }
+    .hero-text-content { padding: 30px; }
+    .hero-main { height: 400px; }
     .weekly-container { flex-direction: column; padding: 0; }
     .vertical-label { writing-mode: horizontal-tb; transform: none; min-height: auto; width: 100%; }
     .weekly-grid { padding: 30px 20px; grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; text-align: center; }
-    .footer-watermark { display: none; } /* Ocultar en móvil */
+    .footer-watermark { display: none; }
     .footer-socials { justify-content: center; }
-}
-    .hero-title { font-size: 2.2rem; }
-
 }
