@@ -90,14 +90,129 @@ footer { background: #050505; padding: 60px 0 20px; border-top: 2px solid var(--
 .play-btn:hover { transform: scale(1.1); background: var(--primary-red); color: white; }
 .red-dot { height: 8px; width: 8px; background: red; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+:root {
+    --primary-red: #E60023;
+    --dark-bg: #0D0D0D; /* Un poco más suave que el negro total */
+    --card-bg: #161616;
+    --text-light: #F2F2F2;
+    --text-gray: #999999;
+    
+    /* FUENTES ACTUALIZADAS */
+    --font-head: 'Oswald', sans-serif; /* Más alta y delgada */
+    --font-body: 'Inter', sans-serif;  /* Muy limpia y moderna */
+}
+
+/* --- AJUSTES DE TIPOGRAFÍA --- */
+body {
+    font-weight: 300; /* Hace que el texto se vea más delgado */
+    letter-spacing: -0.01em;
+}
+
+h1, h2, h3 {
+    font-weight: 400; /* No usamos negritas pesadas para mantener la elegancia */
+    letter-spacing: 0.5px;
+}
+
+.hero-title {
+    font-weight: 200; /* Título principal súper delgado y elegante */
+    font-size: 3rem;
+}
+
+/* --- SECCIÓN ESCENA NACIONAL --- */
+.nacional-section {
+    padding: 80px 0;
+    border-top: 1px solid #222;
+}
+
+.section-sub {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+.nacional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.band-card {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #1a1a1a;
+}
+
+.band-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-red);
+    box-shadow: 0 10px 30px rgba(230, 0, 35, 0.1);
+}
+
+.band-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.band-img img {
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Efecto rockero */
+    transition: 0.5s;
+}
+
+.band-card:hover .band-img img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.band-info {
+    padding: 25px;
+}
+
+.band-info h3 {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.band-genre {
+    color: var(--primary-red);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.band-desc {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.band-links {
+    display: flex;
+    gap: 15px;
+}
+
+.band-links a {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.band-links a:hover {
+    color: white;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .nav-links { position: fixed; top: 70px; right: -100%; background: #000; width: 100%; flex-direction: column; padding: 40px; transition: 0.4s; }
-    .nav-links.active { right: 0; }
-    .hero-grid { grid-template-columns: 1fr; height: auto; }
-    .main-item { height: 300px; }
-    .releases-grid { grid-template-columns: repeat(2, 1fr); }
-    .player-right, .station-name { display: none; }
+    .nacional-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2rem; }
 }
+}
+
