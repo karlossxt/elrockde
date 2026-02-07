@@ -6,10 +6,10 @@
     <title>El Rock de Todos los Días</title>
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Anton (Títulos) y Montserrat (Texto) -->
+    <!-- Google Fonts: Anton (Títulos) y Montserrat (Texto limpio) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Tu Hoja de Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,34 +17,51 @@
 
     <!-- NAVEGACIÓN -->
     <nav>
-        <div class="container">
-            <!-- LOGO ACTUALIZADO -->
+        <div class="container nav-container">
+            <!-- LOGO -->
             <div class="logo">EL ROCK DE <span>TODOS LOS DÍAS</span></div>
             
-            <ul class="nav-links">
+            <!-- Botón Hamburguesa (Móvil) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links" id="nav-list">
+                
+                <!-- 1. ROCK (Con Submenú) -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Noticias <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Rock <i class="fas fa-chevron-down tiny-icon"></i></a>
                     <div class="dropdown">
                         <a href="#">Metal & Heavy</a>
                         <a href="#">Punk & Hardcore</a>
                         <a href="#">Indie & Alternative</a>
+                        <a href="#">Clásicos</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link">Reseñas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Agenda</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" style="color:var(--primary-red);">TIENDA</a></li>
+
+                <!-- 2. ESCENA NACIONAL (Destacado) -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link highlight-link">Escena Nacional</a>
+                </li>
+
+                <!-- 3. ENTRETENIMIENTO -->
+                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li> <!-- Cine/TV -->
+                <li class="nav-item"><a href="#" class="nav-link">Bytemos</a></li>   <!-- Videojuegos -->
+                
+                <!-- 4. LIFESTYLE / GEEK -->
+                <li class="nav-item"><a href="#" class="nav-link">Cultura</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Comics</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION CON SLIDER AUTOMÁTICO -->
+    <!-- HERO SECTION CON SLIDER -->
     <section class="container">
         <div class="hero-wrapper">
             <div class="hero-red-offset"></div>
             
-            <!-- Contenedor de Slides -->
             <div class="hero-slider" id="hero-slider">
-                
                 <!-- Slide 1 -->
                 <div class="hero-slide active">
                     <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=2070&auto=format&fit=crop');"></div>
@@ -57,7 +74,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Slide 2 -->
                 <div class="hero-slide">
                     <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format&fit=crop');"></div>
@@ -70,7 +86,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Slide 3 -->
                 <div class="hero-slide">
                     <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f77ebd961?q=80&w=2070&auto=format&fit=crop');"></div>
@@ -83,12 +98,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: ESTRENOS DE LA SEMANA (5 CARDS) -->
+    <!-- SECCIÓN ESTRENOS (5 CARDS) -->
     <section class="releases-section">
         <div class="container">
             <div class="spotify-header">
@@ -96,80 +110,58 @@
             </div>
             
             <div class="releases-grid">
-                
-                <!-- Card 1 -->
                 <div class="release-card">
-                    <div class="release-cover">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273bf1ec28bd1dfdd9246197397" alt="Album">
-                    </div>
+                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273bf1ec28bd1dfdd9246197397" alt="Album"></div>
                     <div class="release-info">
                         <h3>Keep Me Fed</h3>
                         <p>The Warning</p>
                         <span class="release-type">ALBUM</span>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="release-card">
-                    <div class="release-cover">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Linkin_Park_-_From_Zero.png" alt="Album">
-                    </div>
+                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Linkin_Park_-_From_Zero.png" alt="Album"></div>
                     <div class="release-info">
                         <h3>The Emptiness Machine</h3>
                         <p>Linkin Park</p>
                         <span class="release-type">SINGLE</span>
                     </div>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="release-card">
-                    <div class="release-cover">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Fontaines_D.C._-_Romance.jpg" alt="Album">
-                    </div>
+                    <div class="release-cover"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Fontaines_D.C._-_Romance.jpg" alt="Album"></div>
                     <div class="release-info">
                         <h3>Romance</h3>
                         <p>Fontaines D.C.</p>
                         <span class="release-type">ALBUM</span>
                     </div>
                 </div>
-
-                <!-- Card 4 -->
                 <div class="release-card">
-                    <div class="release-cover">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273b06e9877b06822207b710034" alt="Album">
-                    </div>
+                    <div class="release-cover"><img src="https://i.scdn.co/image/ab67616d0000b273b06e9877b06822207b710034" alt="Album"></div>
                     <div class="release-info">
                         <h3>Malhablado</h3>
                         <p>Diamante Eléctrico</p>
                         <span class="release-type">ALBUM</span>
                     </div>
                 </div>
-
-                <!-- Card 5 -->
                 <div class="release-card">
-                    <div class="release-cover">
-                        <img src="https://placehold.co/300x300/111/fff?text=New+Music" alt="Album">
-                    </div>
+                    <div class="release-cover"><img src="https://placehold.co/300x300/111/fff?text=New+Music" alt="Album"></div>
                     <div class="release-info">
                         <h3>Dark Matter</h3>
                         <p>Pearl Jam</p>
                         <span class="release-type">ALBUM</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE NOTICIAS (GRID) -->
+    <!-- SECCIÓN DE NOTICIAS -->
     <section class="news-section">
         <div class="container">
             <h2 class="section-title">Lo más reciente</h2>
             <div class="news-grid">
-                <!-- Noticia 1 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">GAMING</span>
+                        <span class="card-tag">BYTEMOS</span>
                         <img src="https://placehold.co/600x400/2a0033/FFF?text=Guitar+Hero" alt="Gaming">
                     </div>
                     <div class="news-content">
@@ -177,10 +169,9 @@
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-                <!-- Noticia 2 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">CINE</span>
+                        <span class="card-tag">PANTALLAS</span>
                         <img src="https://placehold.co/600x400/002244/FFF?text=Biopic+Rock" alt="Cine">
                     </div>
                     <div class="news-content">
@@ -188,10 +179,9 @@
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-                <!-- Noticia 3 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">FESTIVALES</span>
+                        <span class="card-tag">NACIONAL</span>
                         <img src="https://placehold.co/600x400/003300/FFF?text=Vive+Latino" alt="Nacional">
                     </div>
                     <div class="news-content">
@@ -231,9 +221,10 @@
                 <div class="footer-col">
                     <h4 class="footer-col-header">Secciones</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Noticias</a></li>
-                        <li><a href="#">Reseñas</a></li>
-                        <li><a href="#">Entrevistas</a></li>
+                        <li><a href="#">Rock & Metal</a></li>
+                        <li><a href="#">Escena Nacional</a></li>
+                        <li><a href="#">Cine y Series</a></li>
+                        <li><a href="#">Gaming</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -241,6 +232,7 @@
                     <ul class="footer-links">
                         <li><a href="#">Publicidad</a></li>
                         <li><a href="#">Enviar Demo</a></li>
+                        <li><a href="#">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
             </div>
@@ -273,8 +265,25 @@
         </audio>
     </div>
 
-    <!-- SCRIPTS (SLIDER + PLAYER) -->
+    <!-- SCRIPTS (MENU MOVIL + PLAYER + SLIDER) -->
     <script>
+        /* --- MENU MOVIL --- */
+        const mobileBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            // Cambiar icono de hamburguesa a X
+            const icon = mobileBtn.querySelector('i');
+            if(navList.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
         /* --- LOGICA DEL REPRODUCTOR --- */
         const audio = document.getElementById('audio-stream');
         const playBtn = document.getElementById('play-pause-btn');
@@ -295,23 +304,16 @@
                 trackTitle.style.animationPlayState = 'paused';
             }
         });
-
         volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value / 100; });
 
-        /* --- LOGICA DEL SLIDER HERO --- */
+        /* --- LOGICA DEL SLIDER --- */
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
-
         function nextSlide() {
-            // Quitar clase active al actual
             slides[currentSlide].classList.remove('active');
-            // Calcular siguiente
             currentSlide = (currentSlide + 1) % slides.length;
-            // Poner clase active al siguiente
             slides[currentSlide].classList.add('active');
         }
-
-        // Cambiar cada 5 segundos (5000 ms)
         setInterval(nextSlide, 5000);
     </script>
 
