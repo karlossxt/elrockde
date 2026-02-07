@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL ROCK DE TODOS LOS DÍAS | Noticias, Cine y Gaming</title>
+    <title>El Rock de Todos los Días</title>
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Anton (Títulos) y Montserrat (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- Tu Hoja de Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,203 +18,187 @@
     <!-- NAVEGACIÓN -->
     <nav>
         <div class="container">
-            <!-- He ajustado el logo para que coincida con tu marca si lo deseas, o déjalo como F1RST -->
-            <div class="logo">F1RST<span>ROCK</span></div>
+            <!-- LOGO ACTUALIZADO -->
+            <div class="logo">EL ROCK DE <span>TODOS LOS DÍAS</span></div>
             
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Rock <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Noticias <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="#">Metal & Heavy</a>
                         <a href="#">Punk & Hardcore</a>
                         <a href="#">Indie & Alternative</a>
-                        <a href="#">Classic Rock</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link">Escena Nacional</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pantallas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" style="color:var(--primary-red);">BYTEMOS</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Reseñas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Agenda</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" style="color:var(--primary-red);">TIENDA</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION (ESTILO ZINE / BRUTALIST) -->
+    <!-- HERO SECTION CON SLIDER AUTOMÁTICO -->
     <section class="container">
         <div class="hero-wrapper">
-            <!-- El fondo rojo desfasado (Decoración) -->
             <div class="hero-red-offset"></div>
             
-            <!-- La tarjeta principal -->
-            <div class="hero-main">
-                <!-- Imagen de fondo -->
-                <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=2070&auto=format&fit=crop');"></div>
+            <!-- Contenedor de Slides -->
+            <div class="hero-slider" id="hero-slider">
                 
-                <!-- Texto sobrepuesto -->
-                <div class="hero-text-content">
-                    <span class="tag-red-small">Breaking News</span>
-                    <h1 class="hero-title-zine">La resurrección del Vinilo: Por qué las leyendas vuelven a lo análogo</h1>
-                    
-                    <div class="hero-meta">
-                        <span class="author-box">POR ELENA VANCE</span>
-                        <span class="date-text">OCT 24, 2026</span>
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="hero-text-content">
+                        <span class="tag-red-small">TENDENCIA</span>
+                        <h1 class="hero-title-zine">La resurrección del Vinilo: ¿Moda o Necesidad?</h1>
+                        <div class="hero-meta">
+                            <span class="author-box">POR ELENA VANCE</span>
+                            <span class="date-text">HOY</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="hero-text-content">
+                        <span class="tag-red-small">LIVE</span>
+                        <h1 class="hero-title-zine">Reseña: Metallica rompe récords en CDMX</h1>
+                        <div class="hero-meta">
+                            <span class="author-box">POR CARLOS SXT</span>
+                            <span class="date-text">AYER</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f77ebd961?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="hero-text-content">
+                        <span class="tag-red-small">ENTREVISTA</span>
+                        <h1 class="hero-title-zine">El futuro del Punk en la era digital</h1>
+                        <div class="hero-meta">
+                            <span class="author-box">POR STAFF</span>
+                            <span class="date-text">HACE 2 DÍAS</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN MULTIMEDIA "OUT NOW" (VERTICAL) -->
-    <div class="weekly-container">
-        <!-- Barra Lateral Roja -->
-        <div class="vertical-label">OUT_NOW_WEEKLY</div>
-        
-        <div class="weekly-grid">
+    <!-- NUEVA SECCIÓN: ESTRENOS DE LA SEMANA (5 CARDS) -->
+    <section class="releases-section">
+        <div class="container">
+            <div class="spotify-header">
+                <i class="fab fa-spotify"></i> ESTRENOS DE LA SEMANA
+            </div>
             
-            <!-- COLUMNA 1: MÚSICA -->
-            <div class="weekly-col">
-                <div class="col-header">
-                    <span class="col-title">Heavy Rotation</span>
-                    <span class="col-cat">/ ROCK</span>
-                </div>
+            <div class="releases-grid">
                 
-                <!-- Item 1 -->
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/111/fff?text=MT" class="item-thumb" alt="Album">
-                    <div class="item-info">
-                        <span class="item-title">72 Seasons</span>
-                        <span class="item-sub">Metallica</span>
+                <!-- Card 1 -->
+                <div class="release-card">
+                    <div class="release-cover">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273bf1ec28bd1dfdd9246197397" alt="Album">
                     </div>
-                    <i class="fab fa-spotify item-icon spotify-active"></i>
-                </div>
-                <!-- Item 2 -->
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/222/fff?text=PJ" class="item-thumb" alt="Album">
-                    <div class="item-info">
-                        <span class="item-title">Dark Matter</span>
-                        <span class="item-sub">Pearl Jam</span>
+                    <div class="release-info">
+                        <h3>Keep Me Fed</h3>
+                        <p>The Warning</p>
+                        <span class="release-type">ALBUM</span>
                     </div>
-                    <i class="fab fa-spotify item-icon spotify-active"></i>
                 </div>
-                <!-- Item 3 -->
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/333/fff?text=LP" class="item-thumb" alt="Album">
-                    <div class="item-info">
-                        <span class="item-title">From Zero</span>
-                        <span class="item-sub">Linkin Park</span>
-                    </div>
-                    <i class="fab fa-spotify item-icon spotify-active"></i>
-                </div>
-            </div>
 
-            <!-- COLUMNA 2: CINE -->
-            <div class="weekly-col">
-                <div class="col-header">
-                    <span class="col-title">Box Office</span>
-                    <span class="col-cat">/ CINEMA</span>
-                </div>
-                
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/444/fff?text=G2" class="item-thumb" alt="Movie">
-                    <div class="item-info">
-                        <span class="item-title">Gladiator II</span>
-                        <span class="item-sub">Ridley Scott</span>
+                <!-- Card 2 -->
+                <div class="release-card">
+                    <div class="release-cover">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Linkin_Park_-_From_Zero.png" alt="Album">
                     </div>
-                    <i class="fas fa-chevron-right item-icon"></i>
-                </div>
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/555/fff?text=DUNE" class="item-thumb" alt="Movie">
-                    <div class="item-info">
-                        <span class="item-title">Dune: Prophecy</span>
-                        <span class="item-sub">HBO Max</span>
+                    <div class="release-info">
+                        <h3>The Emptiness Machine</h3>
+                        <p>Linkin Park</p>
+                        <span class="release-type">SINGLE</span>
                     </div>
-                    <i class="fas fa-chevron-right item-icon"></i>
                 </div>
-            </div>
 
-            <!-- COLUMNA 3: JUEGOS -->
-            <div class="weekly-col">
-                <div class="col-header">
-                    <span class="col-title">System Update</span>
-                    <span class="col-cat">/ GAMES</span>
-                </div>
-                
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/101/fff?text=DA" class="item-thumb" alt="Game">
-                    <div class="item-info">
-                        <span class="item-title">Dragon Age</span>
-                        <span class="item-sub">BioWare</span>
+                <!-- Card 3 -->
+                <div class="release-card">
+                    <div class="release-cover">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Fontaines_D.C._-_Romance.jpg" alt="Album">
                     </div>
-                    <i class="fas fa-gamepad item-icon"></i>
-                </div>
-                <div class="list-item">
-                    <img src="https://placehold.co/100x100/202/fff?text=ST" class="item-thumb" alt="Game">
-                    <div class="item-info">
-                        <span class="item-title">S.T.A.L.K.E.R. 2</span>
-                        <span class="item-sub">GSC World</span>
+                    <div class="release-info">
+                        <h3>Romance</h3>
+                        <p>Fontaines D.C.</p>
+                        <span class="release-type">ALBUM</span>
                     </div>
-                    <i class="fas fa-gamepad item-icon"></i>
                 </div>
-            </div>
 
+                <!-- Card 4 -->
+                <div class="release-card">
+                    <div class="release-cover">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273b06e9877b06822207b710034" alt="Album">
+                    </div>
+                    <div class="release-info">
+                        <h3>Malhablado</h3>
+                        <p>Diamante Eléctrico</p>
+                        <span class="release-type">ALBUM</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="release-card">
+                    <div class="release-cover">
+                        <img src="https://placehold.co/300x300/111/fff?text=New+Music" alt="Album">
+                    </div>
+                    <div class="release-info">
+                        <h3>Dark Matter</h3>
+                        <p>Pearl Jam</p>
+                        <span class="release-type">ALBUM</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- SECCIÓN DE NOTICIAS -->
+    <!-- SECCIÓN DE NOTICIAS (GRID) -->
     <section class="news-section">
         <div class="container">
-            
             <h2 class="section-title">Lo más reciente</h2>
-            
             <div class="news-grid">
-                
+                <!-- Noticia 1 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">BYTEMOS</span>
-                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Gaming+News" alt="Gaming">
+                        <span class="card-tag">GAMING</span>
+                        <img src="https://placehold.co/600x400/2a0033/FFF?text=Guitar+Hero" alt="Gaming">
                     </div>
                     <div class="news-content">
                         <h3 class="news-title">Se confirma nuevo juego de 'Guitar Hero' para 2025</h3>
-                        <p class="news-excerpt">Activision estaría trabajando en un reboot de la franquicia con periféricos reales.</p>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-
+                <!-- Noticia 2 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">PANTALLAS</span>
-                        <img src="https://placehold.co/600x400/002244/FFF?text=Cine+Rock" alt="Cine">
+                        <span class="card-tag">CINE</span>
+                        <img src="https://placehold.co/600x400/002244/FFF?text=Biopic+Rock" alt="Cine">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">Reseña: La biopic de Elvis que incomodó a la familia</h3>
-                        <p class="news-excerpt">Analizamos la nueva serie documental que revela el lado oscuro del Rey.</p>
+                        <h3 class="news-title">La biopic de Elvis que incomodó a la familia</h3>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-
+                <!-- Noticia 3 -->
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="card-tag">METAL</span>
-                        <img src="https://placehold.co/600x400/330000/FFF?text=Metal+News" alt="Metal">
-                    </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Slipknot presenta a su nuevo baterista misterioso</h3>
-                        <p class="news-excerpt">Tras meses de rumores, la banda de Iowa reveló la identidad de la nueva máscara.</p>
-                        <a href="#" class="read-more">Leer más &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-img">
-                        <span class="card-tag">NACIONAL</span>
+                        <span class="card-tag">FESTIVALES</span>
                         <img src="https://placehold.co/600x400/003300/FFF?text=Vive+Latino" alt="Nacional">
                     </div>
                     <div class="news-content">
-                        <h3 class="news-title">El Vive Latino revela horarios y escenarios por día</h3>
-                        <p class="news-excerpt">Prepara tu itinerario: aquí tienes la lista completa para no perderte nada.</p>
+                        <h3 class="news-title">El Vive Latino revela horarios por día</h3>
                         <a href="#" class="read-more">Leer más &rarr;</a>
                     </div>
                 </article>
-                
             </div>
         </div>
     </section>
@@ -218,135 +206,76 @@
     <!-- VIDEO DE LA SEMANA -->
     <section class="video-section">
         <div class="container">
-            <h2 class="section-title" style="border-color: #fff; color: white;">Video de la Semana</h2>
-            
+            <h2 class="section-title" style="border-color: #fff; color: white;">Video Destacado</h2>
             <div class="video-grid">
-                <!-- Video Principal (CORREGIDO) -->
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/v2AC41l6X0gt" 
-                        title="AC/DC - Thunderstruck" 
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/v2AC41l6X0gt" title="AC/DC" frameborder="0" allowfullscreen></iframe>
                 </div>
-                
-                <!-- Lista lateral (Playlist) -->
                 <div class="video-info">
                     <h3>AC/DC - Thunderstruck</h3>
-                    <p>Recordamos este clásico tras el anuncio de la nueva gira mundial. El video original ha superado las mil millones de vistas.</p>
-                    
-                    <h4>Más Videos:</h4>
-                    <ul>
-                        <li><i class="fas fa-play"></i> Metallica - Lux Æterna</li>
-                        <li><i class="fas fa-play"></i> Muse - Won't Stand Down</li>
-                        <li><i class="fas fa-play"></i> Ghost - Mary On A Cross</li>
-                    </ul>
+                    <p>El clásico atemporal que sigue llenando estadios en todo el mundo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER INDUSTRIAL -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <!-- Marca de agua de fondo -->
             <div class="footer-watermark">ROCK</div>
-
             <div class="footer-content">
-                <!-- Columna Izquierda: Marca -->
                 <div class="footer-brand">
-                    <h2>F1RST</h2> 
-                    <p class="footer-desc">
-                        Para los ruidosos, los orgullosos y los que todavía creen en el poder de un simple acorde. Sin relleno. Solo fuego.
-                    </p>
-                    <div class="footer-socials">
-                        <a href="#" class="social-link">INSTAGRAM</a>
-                        <a href="#" class="social-link">SPOTIFY</a>
-                        <a href="#" class="social-link">TWITTER</a>
-                        <a href="#" class="social-link">TWITCH</a>
-                    </div>
+                    <h2>EL ROCK DE<br><span style="color:var(--primary-red)">TODOS LOS DÍAS</span></h2> 
+                    <p class="footer-desc">Periodismo musical independiente, crudo y directo.</p>
                 </div>
-
-                <!-- Columna Centro: Secciones -->
                 <div class="footer-col">
-                    <h4 class="footer-col-header">The Sections</h4>
+                    <h4 class="footer-col-header">Secciones</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Raw Rock</a></li>
-                        <li><a href="#">Hard Cinema</a></li>
-                        <li><a href="#">Elite Gaming</a></li>
-                        <li><a href="#">Industrial Gear</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Reseñas</a></li>
+                        <li><a href="#">Entrevistas</a></li>
                     </ul>
                 </div>
-
-                <!-- Columna Derecha: Contacto -->
                 <div class="footer-col">
-                    <h4 class="footer-col-header">Contact</h4>
+                    <h4 class="footer-col-header">Contacto</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Demos / Press</a></li>
-                        <li><a href="#">Advertising</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Publicidad</a></li>
+                        <li><a href="#">Enviar Demo</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Copyright Bar -->
             <div class="copyright-bar">
-                <span>© 2026 F1RST ROCK MEDIA — EST. IN THE UNDERGROUND</span>
-                <span>POWERED BY <span style="color:var(--primary-red);">CODE & GRIT</span> <span style="width:8px; height:8px; background:var(--primary-red); display:inline-block; margin-left:5px;"></span></span>
+                <span>© 2026 EL ROCK DE TODOS LOS DÍAS</span>
             </div>
         </div>
     </footer>
 
-    <!-- REPRODUCTOR FIJO (MOVIDO AL FINAL PARA MEJOR RENDIMIENTO) -->
+    <!-- REPRODUCTOR FIJO -->
     <div class="radio-player-bar">
-        
-        <!-- 1. Logo y Nombre de la Estación -->
         <div class="player-left">
-            <div class="player-logo-box">
-                <!-- Aquí va tu logo visual -->
-                <i class="fas fa-bolt"></i>
-            </div>
+            <div class="player-logo-box"><i class="fas fa-bolt"></i></div>
             <div class="player-station-info">
-                <!-- Aquí está el nombre de tu página como pediste -->
                 <span class="station-name">EL ROCK DE TODOS LOS DÍAS</span>
                 <div class="track-scroller">
-                    <span id="track-title" class="track-text">EN VIVO: Selección de Clásicos y Novedades...</span>
+                    <span id="track-title" class="track-text">RADIO ONLINE - SONANDO LOS MEJORES HITS...</span>
                 </div>
             </div>
         </div>
-
-        <!-- 2. Controles Centrales -->
         <div class="player-controls">
-            <button id="prev-btn" class="ctrl-btn"><i class="fas fa-step-backward"></i></button>
-            
-            <button id="play-pause-btn" class="play-btn">
-                <i class="fas fa-play" id="play-icon"></i>
-            </button>
-            
-            <button id="next-btn" class="ctrl-btn"><i class="fas fa-step-forward"></i></button>
+            <button id="play-pause-btn" class="play-btn"><i class="fas fa-play" id="play-icon"></i></button>
         </div>
-
-        <!-- 3. Volumen y Estado -->
         <div class="player-right">
-            <div class="live-indicator">
-                <span class="red-dot"></span> LIVE
-            </div>
-            <div class="volume-box">
-                <i class="fas fa-volume-up"></i>
-                <input type="range" min="0" max="100" value="80" class="volume-slider" id="volume-slider">
-            </div>
+            <div class="live-indicator"><span class="red-dot"></span> LIVE</div>
+            <input type="range" min="0" max="100" value="80" class="volume-slider" id="volume-slider">
         </div>
-
-        <!-- AUDIO OCULTO -->
         <audio id="audio-stream" preload="none">
-            <!-- Stream de prueba de Rock -->
             <source src="https://stream.zeno.fm/ezw420q4k38uv" type="audio/mpeg">
         </audio>
-
     </div>
 
-    <!-- SCRIPT DEL REPRODUCTOR -->
+    <!-- SCRIPTS (SLIDER + PLAYER) -->
     <script>
+        /* --- LOGICA DEL REPRODUCTOR --- */
         const audio = document.getElementById('audio-stream');
         const playBtn = document.getElementById('play-pause-btn');
         const playIcon = document.getElementById('play-icon');
@@ -367,9 +296,23 @@
             }
         });
 
-        volumeSlider.addEventListener('input', (e) => {
-            audio.volume = e.target.value / 100;
-        });
+        volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value / 100; });
+
+        /* --- LOGICA DEL SLIDER HERO --- */
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            // Quitar clase active al actual
+            slides[currentSlide].classList.remove('active');
+            // Calcular siguiente
+            currentSlide = (currentSlide + 1) % slides.length;
+            // Poner clase active al siguiente
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Cambiar cada 5 segundos (5000 ms)
+        setInterval(nextSlide, 5000);
     </script>
 
 </body>
